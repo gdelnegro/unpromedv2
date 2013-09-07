@@ -1,0 +1,38 @@
+<?= $this->escape($this->messages[0]) ?> 
+<form class="form-search">
+  <input type="text" class="input-medium search-query" value='A ser implementado'>
+  <button type="submit" class="btn">Pesquisar</button>
+</form>
+<p class="text-right"> <a class="btn btn-primary" href="<?=$this->url(array("controller"=>"usuario","action"=>"new"),null,true)?>">Cadastrar Usuario</a></p>
+<table class="table table-striped table-hover table-bordered table-condensed" width="100%" cellpadding="3" cellspacing="0" border="1">
+   <tr>
+        <th><center>Codigo Usuario</center></th>
+        <th><center>Nome</center></th>        
+        <th><center>Matricula/Ra</center></th>
+        <th><center>Papeis Vinculados</center></th><!-- Filtro -->
+        <th><center>Grupos Vinculados</center></th><!-- Filtro -->
+        <th><center>Status</center></th>
+        <th><center>Data de Inclusao</center></th>
+        <th><center>Alterado por</center></th>
+        <th><center>Data de Alteraçao</center></th>
+        <th><center>Açoes</center></th>
+   </tr>
+   <?foreach($this->dados_usuario AS $key => $usuario):?>
+   <tr>
+      <td><center><?=$usuario['id_usuario']?></center></td>
+        <td><center><?=$usuario['nom_usuario']?></center></td>        
+        <td><center><?=$usuario['num_ra_matricula']?></center></td>
+        <td><center>Papeis Vinculados</center></td><!-- Filtro -->
+        <td><center>Grupos Vinculados</center></td><!-- Filtro -->
+        <td><center><?=$usuario['flg_status_usuario']?></center></td>
+        <td><center><?=$usuario['dt_inclusao']?></center></td>
+        <td><center>Alterado por</center></td>
+        <td><center><?=$usuario['dt_alteracao']?></center></td>
+      <td><center>
+         <a href="<?=$this->url(array("controller"=>"usuario","action"=>"show","id"=>"{$usuario['id_usuario']}"),null,true)?>" title="Visualizar Cadastro"><i class='icon-eye-open'> </i></a>
+         <a href="<?=$this->url(array("controller"=>"usuario","action"=>"edit","id"=>"{$usuario['id_usuario']}"),null,true)?>" title="Editar Cadastro"><i class='icon-pencil'></i></a> 
+         </center>
+      </td>
+   </tr>
+   <?endforeach;?>
+</table>

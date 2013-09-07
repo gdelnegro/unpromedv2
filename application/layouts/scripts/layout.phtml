@@ -1,0 +1,56 @@
+<?=$this->doctype('HTML5')?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <base href="http://<?=$_SERVER['HTTP_HOST'] . $this->baseUrl()?>/" />
+        <title>Unpromed</title>
+        <?= $this->headTitle() ?>
+        <?= $this->headLink()->appendStylesheet(Zend_Controller_Front::getInstance()->getBaseUrl().'/media/css/bootstrap.css')?>
+        <?= $this->headLink()->appendStylesheet(Zend_Controller_Front::getInstance()->getBaseUrl().'/media/css/geral.css')?>
+        <style>
+            /*.span2{
+                box-shadow: 10px 10px 5px #888888;
+                border-radius:15px;
+            }*/
+        </style>
+    </head>
+   <body>
+        <div id="topo">
+            <div id="area_login">
+                <table>
+                    <tr>
+                        <td>Ola <b><?=$this->layout()->usuario->nom_usuario; ?> <i class="icon-user"></i> </b></td>
+                        <td><a href="<?=$this->url(array("controller"=>"index","action"=>"logout"),null,true)?>">Logout</a></td>
+                    </tr>
+                    <tr>
+                        <td><?=$this->layout()->usuario->desc_campus; ?>[Campus]</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu_navegacao">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Unpromed</a>
+                    <ul class="nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="<?=$this->url(array("controller"=>"usuario","action"=>"index"),null,true)?>">UC003 - Usuario</a></li>
+                        <li><a href="<?=$this->url(array("controller"=>"papel","action"=>"index"),null,true)?>">UC001 - Papel</a></li>
+                </div>
+            </div>
+        </div>
+       <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+       </div>
+    </body>
+    <?php
+    echo $this->jQuery()
+            ->setVersion('1.5.1')
+            ->setUiVersion('1.8.11')
+            ->enable()
+            ->uienable();
+    ?>
