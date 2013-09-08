@@ -28,7 +28,17 @@ class Application_Form_Papel extends Twitter_Form
         
         $desc_papel = new Zend_Form_Element_Text('desc_papel');
         $desc_papel->setLabel('Papel')
-                ->setAttrib('disabled', $this->editavel);
+                ->setAttrib('disabled', $this->editavel)
+                ->setAttrib('lenght', 30)
+                ->setFilters(array('alnum'))
+                ->setValidators(array(
+                    array('notEmpty', true, array(
+                        'messages' => array (
+                            'isEmpty' =>    'A descrição do papel não pode ser nula',
+                            )
+                        ))
+                    ))
+                ->setRequired(true);
         
         $flg_status_papel = new Zend_Form_Element_Radio('flg_status_papel');
         $flg_status_papel->addMultiOption(1, "Ativo")
@@ -56,7 +66,7 @@ class Application_Form_Papel extends Twitter_Form
             $flg_status_papel,
         ));
         
-        if ($this->tipo != 'NEW'){
+        if ($this->tipo == 'SHOW'){
             $this->addElements(array(
                 $dt_inclusao,
                 $dt_alteracao,
@@ -79,4 +89,3 @@ class Application_Form_Papel extends Twitter_Form
 
 
 }
-
