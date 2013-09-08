@@ -28,8 +28,8 @@ class IndexController extends Zend_Controller_Action
                 $dbAdapter = Zend_Db_Table::getDefaultAdapter();
                 
                 $authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
-                $authAdapter->setTableName('cl_usuario')
-                        ->setIdentityColumn('num_ra_matricula')
+                $authAdapter->setTableName('tb_usuario')
+                        ->setIdentityColumn('num_matricola_ra')
                         ->setCredentialColumn('desc_senha')
                         ->setCredentialTreatment('MD5(?)');
                 

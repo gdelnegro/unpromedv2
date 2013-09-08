@@ -23,6 +23,8 @@ class Application_Form_Usuario extends Twitter_Form
         /**
          * Criacao dos campos utilizados
          */
+        
+        $id_usuario = new Zend_Form_Element_Hidden('id_usuario');
         $nom_usuario = new Zend_Form_Element_Text('nom_usuario',array(
             'label' =>  'Nome do Usuario',
             'required'  =>  true,

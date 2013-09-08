@@ -22,6 +22,12 @@ class PapelController extends Zend_Controller_Action
         $dadosPapel = $papel->pesquisarPapel();
         $this->view->assign("dados_papel",$dadosPapel);
     }
+    
+    public function newAction()
+    {
+        $formPapel = new Application_Form_Papel('show');
+        $this->view->formPapel = $formPapel;
+    }
 
 
 }

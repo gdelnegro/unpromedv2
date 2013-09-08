@@ -3,7 +3,7 @@
 class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
 {
 
-    protected $_name = 'cl_papel';
+    protected $_name = 'tb_papel';
     protected $_primary = 'id_cargo';
     
     public function pesquisarPapel($id = null, $where = null, $order = null, $limit = null){
@@ -30,8 +30,8 @@ class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
             'desc_cargo'      =>  $request['desc_cargo'],
             'dt_inclusao'     =>  $request['dt_inclusao'],
             'dt_alteracao'    =>  $request['dt_alteracao'],    
-            'flg_status'      =>  $request['flg_status'],            
-            'usr_alterou'     =>  $request['usr_alterou'],
+            'flg_status_papel'      =>  $request['flg_status'],            
+            //'usr_alterou'     =>  $request['usr_alterou'], não tem no banco
         );
         return $this->insert($dados);
     }
@@ -48,7 +48,7 @@ class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
             'dt_inclusao'     =>  $request['dt_inclusao'],
             'dt_alteracao'    =>  $request['dt_alteracao'],    
             'flg_status'      =>  $request['flg_status'],            
-            'usr_alterou'     =>  $request['usr_alterou'],
+            //'usr_alterou'     =>  $request['usr_alterou'],
         );
         $where = $this->getAdapter()->quoteInto("id_cargo = ?", $request['id_cargo']);
         $this->update($dados, $where);

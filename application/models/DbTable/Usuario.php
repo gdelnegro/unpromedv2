@@ -3,8 +3,29 @@
 class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
 {
 
-    protected $_name = 'cl_usuario';
+    protected $_name = 'tb_usuario';
     protected $_primary = 'id_usuario';
+    
+    /*
+(`id_usuario`,
+`nom_usuario`,
+`num_matricola_ra`,
+`num_rg`,
+`num_cpf`,
+`dt_nasc`,
+`nom_nome_mae`,
+`desc_campus`,
+`desc_email`,
+`flg_status_usuario`,
+`desc_senha`,
+`id_usu_sist`,
+`flg_tipo_usuario`,
+`delega_poder`,
+`dt_inclusao`,
+`dt_validade_senha`,
+`dt_alteracao`,
+`tb_campus_id_campus`)
+     */
     
     
     public function pesquisarUsuario($id = null, $where = null, $order = null, $limit = null){
@@ -28,7 +49,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
              * 'nome_campo => valor,
              */
             'nom_usuario'           =>  $request['nom_usuario'],
-            'num_ra_matricula'      =>  $request['num_ra_matricula'],
+            'num_matricola_ra'      =>  $request['num_ra_matricula'],
             'num_rg'                =>  $request['num_rg'],
             'num_cpf'               =>  $request['num_cpf'],    
             'num_telefone'          =>  $request['num_telefone'],            
