@@ -26,11 +26,10 @@ class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
              * formato:
              * 'nome_campo => valor,
              */
-            'id_cargo'        =>  $request['id_cargo'],
             'desc_cargo'      =>  $request['desc_cargo'],
             'dt_inclusao'     =>  $request['dt_inclusao'],
             'dt_alteracao'    =>  $request['dt_alteracao'],    
-            'flg_status_papel'      =>  $request['flg_status'],            
+            'flg_status_papel_papel'      =>  $request['flg_status_papel'],            
             //'usr_alterou'     =>  $request['usr_alterou'], não tem no banco
         );
         return $this->insert($dados);
@@ -47,7 +46,7 @@ class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
             'desc_cargo'      =>  $request['desc_cargo'],
             'dt_inclusao'     =>  $request['dt_inclusao'],
             'dt_alteracao'    =>  $request['dt_alteracao'],    
-            'flg_status'      =>  $request['flg_status'],            
+            'flg_status_papel'      =>  $request['flg_status_papel'],            
             //'usr_alterou'     =>  $request['usr_alterou'],
         );
         $where = $this->getAdapter()->quoteInto("id_cargo = ?", $request['id_cargo']);

@@ -50,14 +50,15 @@ class PapelController extends Zend_Controller_Action
         $papel = new Application_Model_DbTable_Papel();
         $dadosPapel = $papel->pesquisarPapel($this->_getParam('id'));
         $formPapel->populate($dadosPapel);
-        $this->view->userForm = $formPapel;
+        $this->view->formPapel = $formPapel;
    }
    
    public function updateAction()
    {
-      $model = new Application_Model_DbTable_Usuario();
-      $model->alterarUsuario($this->_getAllParams());
-      $this->_redirect('usuario/index');
+      $papel = new Application_Model_DbTable_Papel();
+      $papel->alterarPapel( $this->getAllParams() );
+      
+      $this->_redirect('papel/index');
    }
 
 
