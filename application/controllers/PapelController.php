@@ -20,14 +20,45 @@ class PapelController extends Zend_Controller_Action
     {
         $papel = new Application_Model_DbTable_Papel();
         $dadosPapel = $papel->pesquisarPapel();
-        $this->view->assign("dados_papel",$dadosPapel);
+        $this->view->dadosPapel = $dadosPapel;
     }
     
     public function newAction()
     {
-        $formPapel = new Application_Form_Papel('show');
+        $formPapel = new Application_Form_Papel('new');
         $this->view->formPapel = $formPapel;
     }
+    
+    public function showAction(){
+        $formPapel = new Application_Form_Papel('show');
+        $papel = new Application_Model_DbTable_Papel();
+        $dadosPapel = $papel->pesquisarPapel($this->_getParam('id'));
+        $formPapel->populate($dadosPapel);
+        $this->view->userForm = $formPapel;
+    }
+    
+    
+    public function createAction(){
+        $papel = new Application_Model_DbTable_Papel();
+        $papel->incluirPapel($this->getAllParams());
+        $this->_helper->redirector('index');
+        
+    }
+   
+   public function editAction(){
+        $formPapel = new Application_Form_Papel('edit');
+        $papel = new Application_Model_DbTable_Papel();
+        $dadosPapel = $papel->pesquisarPapel($this->_getParam('id'));
+        $formPapel->populate($dadosPapel);
+        $this->view->userForm = $formPapel;
+   }
+   
+   public function updateAction()
+   {
+      $model = new Application_Model_DbTable_Usuario();
+      $model->alterarUsuario($this->_getAllParams());
+      $this->_redirect('usuario/index');
+   }
 
 
 }

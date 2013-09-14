@@ -24,10 +24,10 @@ class Application_Form_Papel extends Twitter_Form
         $this->setAttrib("horizontal", true);
         
         /*Elementos*/
-        $id_papel = new Zend_Form_Element_Hidden('id_papel');
+        $id_cargo = new Zend_Form_Element_Hidden('id_cargo');
         
-        $desc_papel = new Zend_Form_Element_Text('desc_papel');
-        $desc_papel->setLabel('Papel')
+        $desc_cargo = new Zend_Form_Element_Text('desc_cargo');
+        $desc_cargo->setLabel('Papel')
                 ->setAttrib('disabled', $this->editavel)
                 ->setAttrib('lenght', 30)
                 ->setFilters(array('alnum'))
@@ -62,7 +62,8 @@ class Application_Form_Papel extends Twitter_Form
         
         
         $this->addElements(array(
-            $desc_papel,
+            $id_cargo,
+            $desc_cargo,
             $flg_status_papel,
         ));
         
