@@ -34,7 +34,7 @@ class PapelController extends Zend_Controller_Action
         $papel = new Application_Model_DbTable_Papel();
         $dadosPapel = $papel->pesquisarPapel($this->_getParam('id'));
         $formPapel->populate($dadosPapel);
-        $this->view->userForm = $formPapel;
+        $this->view->formPapel = $formPapel;
     }
     
     
@@ -63,4 +63,3 @@ class PapelController extends Zend_Controller_Action
 
 
 }
-

@@ -21,7 +21,7 @@
         <td><center><?=$papel['dt_inclusao']?></center></td>
         <td><center>Alterado por</center></td>
         <td><center><?=$papel['dt_alteracao']?></center></td>
-        <td><center><?=$papel['flg_status']?></center></td>
+        <td><center><?=$papel['flg_status_papel']?></center></td>
       <td><center>
          <a href="<?=$this->url(array("controller"=>"papel","action"=>"show","id"=>"{$papel['id_cargo']}"),null,true)?>" title="Visualizar Cadastro"><i class='icon-eye-open'> </i></a>
          <a href="<?=$this->url(array("controller"=>"papel","action"=>"edit","id"=>"{$papel['id_cargo']}"),null,true)?>" title="Editar Cadastro"><i class='icon-pencil'></i></a> 

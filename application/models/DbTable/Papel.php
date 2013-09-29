@@ -27,9 +27,9 @@ class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
              * 'nome_campo => valor,
              */
             'desc_cargo'      =>  $request['desc_cargo'],
-            'dt_inclusao'     =>  $request['dt_inclusao'],
-            'dt_alteracao'    =>  $request['dt_alteracao'],    
-            'flg_status_papel_papel'      =>  $request['flg_status_papel'],            
+            'dt_inclusao'     =>  $date,
+            //'dt_alteracao'    =>  $request['dt_alteracao'],    
+            'flg_status_papel'      =>  $request['flg_status_papel'],            
             //'usr_alterou'     =>  $request['usr_alterou'], não tem no banco
         );
         return $this->insert($dados);
@@ -44,8 +44,8 @@ class Application_Model_DbTable_Papel extends Zend_Db_Table_Abstract
              */
             'id_cargo'        =>  $request['id_cargo'],
             'desc_cargo'      =>  $request['desc_cargo'],
-            'dt_inclusao'     =>  $request['dt_inclusao'],
-            'dt_alteracao'    =>  $request['dt_alteracao'],    
+            //'dt_inclusao'     =>  $request['dt_inclusao'],
+            'dt_alteracao'    =>  $date,    
             'flg_status_papel'      =>  $request['flg_status_papel'],            
             //'usr_alterou'     =>  $request['usr_alterou'],
         );
