@@ -19,6 +19,7 @@ class Application_Form_Usuario extends Twitter_Form
     {
         $this->setMethod('post');
         $this->setAttrib("horizontal", true);
+        $this->setAttrib("autocomplete", "off");
 
         /**
          * Criacao dos campos utilizados
@@ -30,14 +31,9 @@ class Application_Form_Usuario extends Twitter_Form
             'required'  =>  true,
             'filters'   =>  array('StringTrim'),
             'validators' => array(
-                array('Digits', false, array(
-                                'messages' => array(
-                                    'notDigits' => "Deve conter apenas numeros",
-                                    'digitsStringEmpty' => 'Campo "Login" nao pode ser nulo',
-                            ))),
                         array('notEmpty', true, array(
                                 'messages' => array(
-                                    'isEmpty' => 'Campo "Login" nao pode ser nulo'
+                                    'isEmpty' => 'Campo "Nome" nao pode ser nulo'
                                 )
                         )),
             ),
@@ -45,8 +41,8 @@ class Application_Form_Usuario extends Twitter_Form
         ));
         $nom_usuario->setAttrib('size', 50);
         
-        $num_ra_matricula = $this->createElement('text', 'num_ra_matricula');
-        $num_ra_matricula->setLabel('RA || Num. Matricula')
+        $num_matricola_ra = $this->createElement('text', 'num_ra_matricula');
+        $num_matricola_ra->setLabel('RA || Num. Matricula')
                 ->setRequired(true)
                 ->setFilters(array('alnum'))
                 ->setValidators(array(
@@ -206,7 +202,7 @@ class Application_Form_Usuario extends Twitter_Form
         
         $this->addElements( array (
                             $nom_usuario,
-                            $num_ra_matricula,
+                            $num_matricola_ra,
                             $email,
                             $num_cpf,
                             $num_rg,

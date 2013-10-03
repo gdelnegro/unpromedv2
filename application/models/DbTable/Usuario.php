@@ -49,7 +49,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
              * 'nome_campo => valor,
              */
             'nom_usuario'           =>  $request['nom_usuario'],
-            'num_matricola_ra'      =>  $request['num_ra_matricula'],
+            'num_matricola_ra'      =>  $request['num_matricola_ra'],
             'num_rg'                =>  $request['num_rg'],
             'num_cpf'               =>  $request['num_cpf'],    
             'num_telefone'          =>  $request['num_telefone'],            
@@ -79,7 +79,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
              * 'nome_campo => valor,
              */
             'nom_usuario'           =>  $request['nom_usuario'],
-            'num_ra_matricula'      =>  $request['num_ra_matricula'],
+            'num_matricola_ra'      =>  $request['num_matricola_ra'],
             'num_rg'                =>  $request['num_rg'],
             'num_cpf'               =>  $request['num_cpf'],    
             'num_telefone'          =>  $request['num_telefone'],            
