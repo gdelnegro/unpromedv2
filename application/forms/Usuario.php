@@ -201,6 +201,7 @@ class Application_Form_Usuario extends Twitter_Form
          */
         
         $this->addElements( array (
+                            $id_usuario,
                             $nom_usuario,
                             $num_matricola_ra,
                             $email,
@@ -233,6 +234,12 @@ class Application_Form_Usuario extends Twitter_Form
 			"class" => "btn-primary",
 			"label" => "Voltar",
                         "onclick" => 'window.location =\''.$this->getView()->url(array('controller'=>'usuario','action'=>'index')).'\' '
+		));
+        
+        $this->addElement("button", "custom", array(
+			"class" => "btn-primary",
+			"label" => "Imprimir",
+                        "onclick" => 'window.print()'
 		));
         
         if( $this->editavel == FALSE ){

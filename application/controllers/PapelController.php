@@ -60,6 +60,15 @@ class PapelController extends Zend_Controller_Action
       
       $this->_redirect('papel/index');
    }
+   
+   public function printAction()
+   {
+       $this->_helper->layout()->disableLayout();
+       
+       $papel = new Application_Model_DbTable_Papel();
+       $dadosPapel = $papel->pesquisarPapel($this->_getParam('id'));
+       $this->view->dadosPapel = $dadosPapel;
+   }
 
 
 }

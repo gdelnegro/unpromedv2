@@ -85,10 +85,17 @@ class Application_Form_Papel extends Twitter_Form
         }
         
         /*Botão Voltar*/
-        $this->addElement("button", "custom", array(
+        $this->addElement("button", "voltar", array(
 			"class" => "btn-primary",
 			"label" => "Voltar",
                         "onclick" => 'window.location =\''.$this->getView()->url(array('controller'=>'papel','action'=>'index')).'\' '
+		));
+        
+        $this->addElement("button", "imprimir", array(
+			"class" => "btn-primary",
+			"label" => "Imprimir",
+                        //"onclick" => 'window.print()',
+                        "onclick" => 'window.location =\''.$this->getView()->url(array('controller'=>'papel','action'=>'print')).'\' '
 		));
         
     }
