@@ -11,6 +11,9 @@ class PacienteController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
+        
+        $formPaciente = new Application_Form_Paciente();
+        $this->view->formPaciente = $formPaciente;
     }
 
 

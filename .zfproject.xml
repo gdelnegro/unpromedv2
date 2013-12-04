@@ -17,6 +17,11 @@
       </controllersDirectory>
       <formsDirectory enabled="false">
         <formFile formName="Papel"/>
+        <formFile formName="Paciente"/>
+        <formFile formName="PacDadosPessoais"/>
+        <formFile formName="PacDocumentos"/>
+        <formFile formName="PacEndContato"/>
+        <formFile formName="PacAcompResp"/>
       </formsDirectory>
       <layoutsDirectory enabled="false"/>
       <modelsDirectory/>
