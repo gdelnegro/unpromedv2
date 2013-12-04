@@ -43,6 +43,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
     
     public function incluirUsuario(array $request){
         $date = Zend_Date::now()->toString('yyyy-MM-dd');
+
         $dados = array(
             /*
              * formato:
@@ -59,7 +60,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
             'desc_campus'           =>  $request['desc_campus'],
             'desc_email'            =>  $request['desc_email'],
             'flg_status_usuario'    =>  $request['flg_status_usuario'],
-            'desc_senha'            =>  $request['desc_senha'],
+            'desc_senha'            =>  md5($request['desc_senha']),
             //'id_usu_sist'           =>  $request['id_usu_sist'],//usuario que alterou o cadastro (quem esta logado)
             'flg_tipo_usuario'      =>  $request['flg_tipo_usuario'],
             'delega_poder'          =>  $request['delega_poder'],
@@ -73,6 +74,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
     
     public function alterarUsuario(array $request){
         $date = Zend_Date::now()->toString('yyyy-MM-dd');
+        
         $dados = array(
             /*
              * formato:
@@ -89,7 +91,7 @@ class Application_Model_DbTable_Usuario extends Zend_Db_Table_Abstract
             'desc_campus'           =>  $request['desc_campus'],
             'desc_email'            =>  $request['desc_email'],
             'flg_status_usuario'    =>  $request['flg_status_usuario'],
-            'desc_senha'            =>  $request['desc_senha'],
+            'desc_senha'            =>  md5($request['desc_senha']),
             'id_usu_sist'           =>  $request['id_usu_sist'],
             'flg_tipo_usuario'      =>  $request['flg_tipo_usuario'],
             'delega_poder'          =>  $request['delega_poder'],

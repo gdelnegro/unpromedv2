@@ -41,7 +41,7 @@ class Application_Form_Usuario extends Twitter_Form
         ));
         $nom_usuario->setAttrib('size', 50);
         
-        $num_matricola_ra = $this->createElement('text', 'num_ra_matricula');
+        $num_matricola_ra = $this->createElement('text', 'num_matricola_ra');
         $num_matricola_ra->setLabel('RA || Num. Matricula')
                 ->setRequired(true)
                 ->setFilters(array('alnum'))
@@ -158,7 +158,7 @@ class Application_Form_Usuario extends Twitter_Form
                 ->setRequired(true)
                 ->setAttrib('disabled', $this->exibir);
         
-        $senha = new Zend_Form_Element_Password('senha');
+        $senha = new Zend_Form_Element_Password('desc_senha');
         $senha->setLabel('Senha')
                 ->setFilters(array( 'StringTrim' ))
                 ->setRequired(true)
