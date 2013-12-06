@@ -22,9 +22,14 @@
         <formFile formName="PacDocumentos"/>
         <formFile formName="PacEndContato"/>
         <formFile formName="PacAcompResp"/>
+        <formFile formName="Grupo"/>
       </formsDirectory>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Grupo"/>
+        </dbTableDirectory>
+      </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
       <viewsDirectory>

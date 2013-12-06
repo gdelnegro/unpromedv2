@@ -1,4 +1,32 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Grupo</b> and script/action name <b>index</b></p>
-</div>
+<?= $this->escape($this->messages[0]) ?> 
+<form class="form-search">
+  <input type="text" class="input-medium search-query" value='A ser implementado'>
+  <button type="submit" class="btn">Pesquisar</button>
+</form>
+<p class="text-right"> <a class="btn btn-primary" href="<?=$this->url(array("controller"=>"grupo","action"=>"new"),null,true)?>">Cadastrar Grupo</a></p>
+<table class="table table-striped table-hover table-bordered table-condensed" width="100%" cellpadding="3" cellspacing="0" border="1">
+   <tr>
+        <th><center>Codigo Grupo</center></th>
+        <th><center>Descricao</center></th>                
+        <th><center>Data de Inclusao</center></th>
+        <th><center>Alterado por</center></th>
+        <th><center>Data de Alteraçao</center></th>
+        <th><center>Status</center></th>
+        <th><center>Açoes</center></th>
+   </tr>
+   <?foreach($this->dadosGrupo AS $key => $grupo):?>
+   <tr>
+      <td><center><?=$grupo['id_grupo']?></center></td>
+        <td><center><?=$grupo['desc_grupo']?></center></td>        
+        <td><center><?=$grupo['dt_inclusao']?></center></td>
+        <td><center>Alterado por</center></td>
+        <td><center><?=$grupo['dt_alteracao']?></center></td>
+        <td><center><?=$grupo['flg_status_grupo_acesso']?></center></td>
+      <td><center>
+         <a href="<?=$this->url(array("controller"=>"grupo","action"=>"show","id"=>"{$grupo['id_grupo']}"),null,true)?>" title="Visualizar Cadastro"><i class='icon-eye-open'> </i></a>
+         <a href="<?=$this->url(array("controller"=>"grupo","action"=>"edit","id"=>"{$grupo['id_grupo']}"),null,true)?>" title="Editar Cadastro"><i class='icon-pencil'></i></a> 
+         </center>
+      </td>
+   </tr>
+   <?endforeach;?>
+</table>
